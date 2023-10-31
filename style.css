@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1px;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    background-color: #444;
+    padding: 1rem;
+}
+
+nav li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+section {
+    padding: 2rem;
+}
+
+.project {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.project a {
+    display: block;
+    text-align: center;
+    background-color: #444;
+    color: #fff;
+    padding: 0.5rem;
+    text-decoration: none;
+}
+
+.project a:hover {
+    background-color: #555;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    margin: 10px 0;
+}
+
+.contact-list a {
+    text-decoration: none;
+    color: #333;
+}
+
+.contact-list i {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #0077B5; /* Color for the icons */
+}
+
+.contact-list a:hover {
+    color: #0077B5; /* Change color to the appropriate one for links on hover */
+}
+
+#tech-stack {
+    margin-top: 50px;
+}
+
+#tech-stack h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#tech-stack ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#tech-stack li {
+    margin: 10px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+#tech-stack li i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
