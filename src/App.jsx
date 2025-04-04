@@ -28,7 +28,7 @@ const Loader = () => {
     })
   };
 
-  const letters = "vrooooommmm".split("");
+  const letters = "vroooomm".split("");
 
   return (
     <div className="flex items-center justify-center h-screen bg-purple-50">
