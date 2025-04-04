@@ -1,4 +1,4 @@
-// App.jsx - Main component
+// App.jsx - Main component with Contact
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -8,7 +8,7 @@ import About from './components/About';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
-import Footer from './components/Footer';
+import Footer from './components/Footer'; // Updated Footer now serves as Contact section too
 import './App.css';
 
 // Custom Loader Component
@@ -28,7 +28,7 @@ const Loader = () => {
     })
   };
 
-  const letters = "   hola...".split("");
+  const letters = "tusharr".split("");
 
   return (
     <div className="flex items-center justify-center h-screen bg-purple-50">
@@ -95,6 +95,7 @@ const App = () => {
                     <Experience />
                     <Projects />
                     <Skills />
+                    {/* Footer now serves as Contact section too */}
                   </>
                 } 
               />

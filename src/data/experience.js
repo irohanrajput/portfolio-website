@@ -17,7 +17,7 @@ const experienceData = [
     role: "Full Stack Engineer Intern",
     company: "Hyrio",
     companyLink: "https://hyrio.ai",
-    duration: "Feb 2023 - Apr 2023",
+    duration: "Feb 2025 - Apr 2025",
     location: "Bengaluru, India - Remote",
     roleType: "Internship",
     skills: ["TypeScript", "Selenium", "Python", "REST APIs", "Express.js", "Node.js", "Next.js"],
