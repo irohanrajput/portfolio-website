@@ -17,7 +17,7 @@ const Hero = () => {
           <h2 className="text-xl text-purple-700 font-medium mb-2">Hello, I'm</h2>
           <h1 className="text-6xl md:text-7xl font-extrabold text-purple-900 mb-4">Tushar Singh</h1>
           <h3 className="text-2xl md:text-3xl font-semibold text-gray-700 mb-3">a full-stack web dev from India</h3>
-          <h5 className="text-xl md:text-xl  text-gray-700 mb-6">I write APIs to buy guitars :D</h5>
+          <h5 className="text-xl md:text-xl  text-gray-700 mb-6">I write APIs and build servers to buy guitars :D</h5>
           <div className="flex justify-center space-x-6 mb-8">
             <a href="mailto:itusharsingh27@gmail.com" className="text-purple-900 hover:text-purple-700">
               <FaEnvelope size={28} />
