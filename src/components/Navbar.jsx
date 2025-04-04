@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <nav className={`fixed w-full py-4 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold text-purple-900">TS</Link>
+        <Link to="/" className="text-2xl font-bold text-purple-900">tusharr</Link>
         <div className="hidden md:flex space-x-8">
           <a href="#about" className="text-purple-900 hover:text-purple-700">About</a>
           <a href="#experience" className="text-purple-900 hover:text-purple-700">Experience</a>
