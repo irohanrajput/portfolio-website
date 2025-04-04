@@ -28,7 +28,7 @@ const Loader = () => {
     })
   };
 
-  const letters = "tusharr".split("");
+  const letters = "vrooooommmm".split("");
 
   return (
     <div className="flex items-center justify-center h-screen bg-purple-50">
@@ -50,7 +50,7 @@ const Loader = () => {
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.5 }}
+          transition={{ delay: 0, duration: 0.5 }}
           className="mt-4"
         >
           <div className="w-64 h-2 bg-purple-200 rounded-full overflow-hidden mx-auto mt-6">
