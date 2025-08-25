@@ -12,7 +12,7 @@ const Skills = () => {
     },
     {
       title: "Frameworks & Libraries",
-      skills: ["Django Rest Framework", "Flask", "FastAPI", "Laravel", "React.js", "Express.js", "Node.js", "Next.js", "React Native", "TailwindCSS"]
+      skills: ["Django Rest Framework", "Flask", "FastAPI","Selenium", "BeautifulSoup", "Laravel", "React.js", "Express.js", "Node.js", "Next.js", "React Native", "TailwindCSS"]
     },
     {
       title: "Tools & Technologies",
