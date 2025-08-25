@@ -33,7 +33,7 @@ const Hero = () => {
             </a>
           </div>
           <div className="space-x-4">
-            <a href="#projects" className="px-6 py-3 bg-purple-900 text-white rounded-md shadow-lg hover:bg-purple-700 transition-transform transform hover:scale-105">View Projects</a>
+            <a href="#experience" className="px-6 py-3 bg-purple-900 text-white rounded-md shadow-lg hover:bg-purple-700 transition-transform transform hover:scale-105">View Experience</a>
             <a href="https://card.tushar.wiki" target="_blank" rel="noopener noreferrer" className="px-6 py-3 border border-purple-900 text-purple-900 rounded-md hover:bg-purple-100 transition-transform transform hover:scale-105">Resume</a>
           </div>
         </motion.div>
