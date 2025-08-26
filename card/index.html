@@ -302,13 +302,8 @@
         }
 
         function showResume() {
-            body.className = 'resume-mode';
-            resumeSection.classList.remove('hidden');
-            linktreeSection.classList.add('hidden');
-            pageTitle.textContent = 'Rohan Rajput - Resume';
-            
-            // Initialize PDF viewer
-            initializePDF();
+            // Just redirect directly to the PDF file
+            window.location.href = "resume.pdf";
         }
 
         function showLinktree() {
