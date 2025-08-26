@@ -83,7 +83,7 @@ const Hero = () => {
               href="https://resume.tushar.wiki"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 border border-purple-900 text-purple-900 rounded-md hover:bg-purple-100 transition-transform transform hover:scale-105"
+              className="px-6 py-3 border border-purple-900 text-purple-900 rounded-md hover:bg-purple-100 transition-transform transform hover:scale-105" 
             >
               Resume
             </a>
