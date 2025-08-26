@@ -88,7 +88,7 @@ const Hero = () => {
               Resume
             </a>
             <a
-              href="https://resume.tushar.wiki/?view=linktree"
+              href="https://card.tushar.wiki"
               className="px-6 py-3 bg-purple-900 text-white rounded-md shadow-lg hover:bg-purple-700 transition-transform transform hover:scale-105"
             >
               Profile Card

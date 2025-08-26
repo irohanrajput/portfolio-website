@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Tushar Singh</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Resume Styles */
+        .resume-mode {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .resume-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 1000px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .resume-header h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .resume-header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .pdf-container {
+            width: 100%;
+            height: 80vh;
+            min-height: 600px;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background: white;
+            overflow: hidden;
+        }
+
+        .pdf-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 1em;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn.linktree-btn {
+            background: linear-gradient(45deg, #00d084, #00c471);
+            box-shadow: 0 4px 15px rgba(0, 208, 132, 0.4);
+        }
+
+        .btn.linktree-btn:hover {
+            box-shadow: 0 8px 25px rgba(0, 208, 132, 0.6);
+        }
+
+        .error-message {
+            text-align: center;
+            background: #ffe6e6;
+            border: 1px solid #ffcccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            color: #cc0000;
+            display: none;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 1.2em;
+        }
+
+        .loading::after {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #667eea;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s ease-in-out infinite;
+            margin-left: 10px;
+        }
+
+        /* Linktree Styles */
+        .linktree-mode {
+            background: linear-gradient(135deg, #00d084 0%, #00c471 100%);
+            color: white;
+        }
+
+        .linktree-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .linktree-container h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .linktree-container p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .linktree-btn {
+            background: rgba(255, 255, 255, 0.2) !important;
+            border: 2px solid rgba(255, 255, 255, 0.3) !important;
+            backdrop-filter: blur(5px);
+        }
+
+        .linktree-btn:hover {
+            background: rgba(255, 255, 255, 0.3) !important;
+        }
+
+        .linktree-loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .resume-container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .resume-header h1 {
+                font-size: 2em;
+            }
+
+            .pdf-container {
+                height: 70vh;
+                min-height: 500px;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 200px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body id="body">
+    <!-- Resume Section -->
+    <div id="resumeSection" class="resume-container hidden">
+        <div class="resume-header">
+            <h1>Tushar Singh</h1>
+            <p>Resume & Portfolio</p>
+        </div>
+
+        <div class="error-message" id="errorMessage">
+            <h3>PDF could not be loaded</h3>
+            <p>The resume.pdf file could not be found or loaded. Please make sure the file exists in the same directory as this HTML file.</p>
+        </div>
+
+        <div class="pdf-container">
+            <div class="loading" id="loadingMessage">Loading resume...</div>
+            <iframe 
+                id="pdfViewer" 
+                class="pdf-iframe" 
+                src="resume.pdf#toolbar=1&navpanes=0&scrollbar=1" 
+                style="display: none;"
+                title="Resume PDF">
+            </iframe>
+        </div>
+
+        <div class="controls">
+            <a href="resume.pdf" download="Rohan_Rajput_Resume.pdf" class="btn">
+                <span>📥</span> Download Resume
+            </a>
+            <a href="resume.pdf" target="_blank" class="btn">
+                <span>🔗</span> Open in New Tab
+            </a>
+            <button onclick="printResume()" class="btn">
+                <span>🖨️</span> Print Resume
+            </button>
+            <a href="?view=linktree" class="btn linktree-btn">
+                <span>🌳</span> View Links
+            </a>
+        </div>
+    </div>
+
+    <!-- Linktree Section -->
+    <div id="linktreeSection" class="linktree-container hidden">
+        <h1>🌳 Tushar Singh</h1>
+        <div class="linktree-loading"></div>
+        <p>Redirecting to Linktree...</p>
+        <p>If you are not redirected automatically, <a href="https://linktr.ee/irohanrajput" class="btn linktree-btn">click here</a>.</p>
+        <a href="?view=resume" class="btn" style="background: linear-gradient(45deg, #667eea, #764ba2) !important; margin-top: 20px;">
+            <span>📄</span> View Resume
+        </a>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const view = urlParams.get('view');
+
+        // Elements
+        const body = document.getElementById('body');
+        const resumeSection = document.getElementById('resumeSection');
+        const linktreeSection = document.getElementById('linktreeSection');
+        const pageTitle = document.getElementById('pageTitle');
+
+        // Route based on URL parameter
+        if (view === 'linktree') {
+            showLinktree();
+        } else if (view === 'resume') {
+            showResume();
+        } else {
+            // Default to resume
+            showResume();
+        }
+
+        function showResume() {
+            // Just redirect directly to the PDF file
+            window.location.href = "resume.pdf";
+        }
+
+        function showLinktree() {
+            body.className = 'linktree-mode';
+            linktreeSection.classList.remove('hidden');
+            resumeSection.classList.add('hidden');
+            pageTitle.textContent = 'Redirecting to Linktree';
+            
+            // Redirect to Linktree
+            setTimeout(() => {
+                window.location.href = "https://linktr.ee/irohanrajput";
+            }, 1500);
+        }
+
+        function initializePDF() {
+            const iframe = document.getElementById('pdfViewer');
+            const loadingMessage = document.getElementById('loadingMessage');
+            const errorMessage = document.getElementById('errorMessage');
+
+            iframe.onload = function() {
+                loadingMessage.style.display = 'none';
+                iframe.style.display = 'block';
+            };
+
+            iframe.onerror = function() {
+                loadingMessage.style.display = 'none';
+                errorMessage.style.display = 'block';
+            };
+
+            fetch('resume.pdf', { method: 'HEAD' })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('PDF not found');
+                    }
+                })
+                .catch(error => {
+                    loadingMessage.style.display = 'none';
+                    errorMessage.style.display = 'block';
+                });
+
+            setTimeout(() => {
+                if (loadingMessage.style.display !== 'none') {
+                    loadingMessage.style.display = 'none';
+                    iframe.style.display = 'block';
+                }
+            }, 5000);
+        }
+
+        function printResume() {
+            const printWindow = window.open('resume.pdf');
+            printWindow.onload = function() {
+                printWindow.print();
+            };
+        }
+    </script>
+</body>
+
+</html>
